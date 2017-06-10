@@ -17,9 +17,9 @@ import java.util.logging.Logger;
 public class Conexaobanco {
 
     private static Connection conn;
-    private final static String driver = "org.postgresql.Driver";
-    private final static String ip = "localhost/";
-    public static String dataBase = "aula";
+    private final static String driver = "org.postgresql.Driver";//SEMPRE ASSIM pOSTGREE
+    private final static String ip = "localhost/";//BANCO DE DADOS dessa mpaquina ou IP do computador que contem o banco
+    public static String dataBase = "aula";//nome de base de dados do PostSQL
     public static String user = "postgres"; //usuário do bd
     public static String password = "postgres"; //senha para o usuário
 
@@ -49,9 +49,7 @@ public class Conexaobanco {
         try {
             getConexao();
             System.out.println("Feito!");
-        } catch (SQLException ex) {
-            Logger.getLogger(Conexaobanco.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(Conexaobanco.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
